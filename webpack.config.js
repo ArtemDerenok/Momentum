@@ -37,6 +37,9 @@ module.exports = {
   devServer: {
     port: 9000,
   },
+  resolve: {
+    extensions: ['.js'],
+  },
   devtool: isDev ? 'source-map' : false,
   plugins: [
     new HTMLWebpackPlugin({
