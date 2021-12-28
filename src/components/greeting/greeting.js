@@ -1,19 +1,4 @@
-const getTimeOfDay = () => {
-  const date = new Date();
-  const hours = date.getHours();
-  let timeOfDay;
-
-  if (hours >= 6 && hours < 12) {
-    timeOfDay = `Good morning`;
-  } else if (hours >= 12 && hours < 18) {
-    timeOfDay = `Good afternoon`;
-  } else if (hours >= 18 && hours < 24) {
-    timeOfDay = `Good evening`;
-  } else {
-    timeOfDay = `Good night`;
-  }
-  return timeOfDay;
-};
+import getTimeOfDay from '../../utils/getTimeOfDay';
 
 const setUserNameToLocalStorage = (name) => {
   localStorage.setItem('userName', name);
@@ -29,7 +14,7 @@ const showGreeting = () => {
   const greetingElement = document.querySelector('.greeting');
   const inputUserName = document.querySelector('.name');
 
-  greetingElement.innerText = getTimeOfDay();
+  greetingElement.innerText = `Good ${getTimeOfDay()}`;
   inputUserName.value = localStorage.getItem('userName');
 
   setInputName(inputUserName);
