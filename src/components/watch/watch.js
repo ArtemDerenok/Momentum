@@ -7,11 +7,22 @@ const showCurrentDay = () => {
   }
 };
 
+const chechCurrentHour = (num, elem) => {
+  const time = elem;
+  if (time.dataset.hour === undefined) {
+    time.dataset.hour = num;
+  }
+  if (time.dataset.hour !== undefined && +time.dataset.hour !== +num) {
+    time.dataset.hour = num;
+  }
+};
+
 const showTime = () => {
   const time = document.querySelector('.time');
   const date = new Date();
 
   time.innerText = date.toLocaleTimeString();
+  chechCurrentHour(date.getHours(), time);
 
   showCurrentDay();
   setTimeout(() => {

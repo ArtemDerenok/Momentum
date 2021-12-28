@@ -35,20 +35,12 @@ const showGreeting = () => {
   setInputName(inputUserName);
 };
 
-let currentHour = new Date().getHours();
+const time = document.querySelector('.time');
 
-const checkTimeOfDay = () => {
-  setTimeout(() => {
-    const date = new Date();
-    const hour = date.getHours();
-    if (hour !== currentHour) {
-      currentHour = hour;
-      showGreeting();
-    }
-    checkTimeOfDay();
-  }, 1000);
-};
+const timeObserver = new MutationObserver(() => {
+  showGreeting();
+});
 
-checkTimeOfDay();
+timeObserver.observe(time, { attributes: true });
 
 export default showGreeting;
