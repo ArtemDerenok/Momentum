@@ -1,0 +1,42 @@
+[
+  {
+    "text": {
+      "ru": "Бросить курить легко. Я сам бросал раз сто.",
+      "en": "It's easy to quit smoking. I've done it hundreds of times."
+    },
+    "author": {
+      "ru": "Марк Твен",
+      "en": "Mark Twain"
+    }
+  }, 
+  {
+   "text": {
+     "ru": "Во многих неудачах люди не понимали, когда сдавались, насколько близки они были к успеху. ",
+     "en": "Many of life's failures are people who did not realize how close they were to success when they gave up."
+   },
+   "author": {
+     "ru": "Томас А.Эдисон",
+     "en": "Thomas Alva Edison"
+   } 
+  },
+  {
+    "text": {
+      "ru": "Когда вдохновение не приходит ко мне, я выхожу ему навстречу.",
+      "en": "When inspiration does not come to me, I go halfway to meet it. Sigmund Freud."
+    }, 
+    "author": {
+      "ru": "Зигмунд Фрейд",
+      "en": "Sigmund Freud"
+    }
+  },
+  {
+    "text": {
+      "ru": "Две вещи бесконечны: вселенная и человеческая глупость; и я еще не уверен насчет вселенной.",
+      "en": "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe."
+    },
+    "author": {
+      "ru": "Альберт Энштейн",
+      "en": "Albert Einstein"
+    }
+  }
+]
