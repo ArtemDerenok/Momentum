@@ -47,7 +47,11 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, 'src/assets/favicon.ico') },
+        {
+          from: path.resolve(__dirname, "./src/assets"),
+          to: path.resolve(__dirname, "./dist"),
+          noErrorOnMissing: true,
+        }
       ],
     }),
     new MiniCssExtractPlugin({

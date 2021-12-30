@@ -5,6 +5,7 @@ import showGreeting from './components/greeting/greeting';
 import './components/backgroundSlider/backgroundSlider';
 import handleWeather from './components/weatherWidget/weatherWidget';
 import showQuote from './components/quoteWidget/quoteWidget';
+import './components/audioPlayer/audioPlayer';
 
 showTime();
 showGreeting();
