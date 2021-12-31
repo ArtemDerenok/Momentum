@@ -1,17 +1,12 @@
 import quotes from '../../data/quotes.json';
-import getRandomNum from '../../utils/getRandomNum';
+import { getQuote } from '../../api/api';
 
 const quoteButton = document.querySelector('.change-quote');
 
-const getQuote = (arr) => {
-  const randomNum = getRandomNum(0, arr.length - 1);
-  return arr[randomNum];
-};
-
-const showQuote = () => {
+const showQuote = async () => {
   const quoteDiv = document.querySelector('.quote');
   const authorDiv = document.querySelector('.author');
-  const quote = getQuote(quotes);
+  const quote = await getQuote(quotes);
   quoteDiv.innerText = quote.text.en;
   authorDiv.innerText = quote.author.en;
 };

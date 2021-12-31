@@ -1,4 +1,6 @@
-const getWeather = async () => {
+import getRandomNum from '../utils/getRandomNum';
+
+export const getWeather = async () => {
   let city;
   if (!localStorage.getItem('city')) {
     city = 'Minsk';
@@ -15,4 +17,11 @@ const getWeather = async () => {
   return result;
 };
 
-export default getWeather;
+export const getQuote = async () => {
+  const data = await fetch('./quotes.json');
+  const result = await data.json();
+
+  const randomNum = getRandomNum(0, result.length - 1);
+
+  return result[randomNum];
+};

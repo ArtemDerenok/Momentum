@@ -1,4 +1,4 @@
-import getWeather from '../../api/api';
+import { getWeather } from '../../api/api';
 
 const inputCity = document.querySelector('.city');
 
