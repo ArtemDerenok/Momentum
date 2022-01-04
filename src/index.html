@@ -37,7 +37,7 @@
     <date class="date"></date>
     <div class="greeting-container">
       <span class="greeting"></span>
-      <input type="text" class="name" placeholder="[Enter name]" />
+      <input type="text" class="name" />
     </div>
   </main>
   <footer class="footer">
@@ -46,6 +46,22 @@
       <div class="quote"></div>
       <div class="author"></div>
     </div>
+    <button class="change-settings" id="settings"></button>
   </footer>
+  <div class="modal hidden" id="settings-modal-container">
+    <div class="modal-window">
+      <div class="modal-window-main">
+        <div class="language">
+          <p>Language:</p>
+          <div>
+            <input type="radio" class="language-radio" name="language" value="en">
+            <label for="english">English</label>
+            <input type="radio" name="language" value="ru">
+            <label for="russian">Russian</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

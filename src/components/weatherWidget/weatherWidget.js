@@ -1,4 +1,5 @@
 import { getWeather } from '../../api/api';
+import { getJsonSettings } from '../settings/settings';
 
 const inputCity = document.querySelector('.city');
 
@@ -15,10 +16,17 @@ const showWeather = (data) => {
   const temperature = document.querySelector('.temperature');
   const weatherDescription = document.querySelector('.weather-description');
   const weatherIcon = document.querySelector('.weather-icon');
+  const settings = getJsonSettings();
   inputCity.value = localStorage.getItem('city');
 
-  wind.innerText = `Wind speed: ${data.wind.speed} m/s`;
-  humidity.innerText = `Humidity: ${data.main.humidity}%`;
+  wind.innerText =
+    settings.lang === `en`
+      ? `Wind speed: ${data.wind.speed} m/s`
+      : `Скорость ветра: ${data.wind.speed} м/с`;
+  humidity.innerText =
+    settings.lang === `en`
+      ? `Humidity: ${data.main.humidity}%`
+      : `Влажность: ${data.main.humidity}%`;
   temperature.innerText = `${data.main.temp}°C`;
   weatherDescription.innerText = data.weather[0].description;
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
@@ -27,6 +35,8 @@ const showWeather = (data) => {
 const handleWeather = async () => {
   if (isInputValue()) {
     localStorage.setItem('city', inputCity.value);
+  } else {
+    localStorage.setItem('city', '');
   }
   const weatherData = await getWeather();
   showWeather(weatherData);

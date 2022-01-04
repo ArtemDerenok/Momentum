@@ -1,15 +1,22 @@
+import { getJsonSettings } from '../components/settings/settings';
 import getRandomNum from '../utils/getRandomNum';
 
 export const getWeather = async () => {
   let city;
+  const settings = getJsonSettings();
+
   if (!localStorage.getItem('city')) {
-    city = 'Minsk';
+    if (settings.lang === 'en') {
+      city = 'Minsk';
+    } else {
+      city = 'Минск';
+    }
     localStorage.setItem('city', city);
   } else {
     city = localStorage.getItem('city');
   }
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=9f0d62b52ad9fa09582c777373b26276&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${settings.lang}&appid=9f0d62b52ad9fa09582c777373b26276&units=metric`;
 
   const data = await fetch(url);
   const result = await data.json();
@@ -24,4 +31,15 @@ export const getQuote = async () => {
   const randomNum = getRandomNum(0, result.length - 1);
 
   return result[randomNum];
+};
+
+export const getImagesByFlicker = async () => {
+  const data = await fetch(
+    'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=80b63f5d15e27bccde1dac2016d5f35f&tags=nature&extras=url_l&format=json&nojsoncallback=1'
+  );
+  const result = await data.json();
+
+  console.log(result.photos.photo);
+
+  return result.photos.photo;
 };

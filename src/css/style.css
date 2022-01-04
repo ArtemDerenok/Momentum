@@ -71,7 +71,8 @@ body {
 
 .player-icon,
 .slider-icon,
-.change-quote {
+.change-quote,
+.change-settings {
   width: 32px;
   height: 32px;
   background-size: 32px 32px;
@@ -87,13 +88,15 @@ body {
 
 .player-icon:hover,
 .slider-icon:hover,
-.change-quote:hover {
+.change-quote:hover,
+.change-settings:hover {
   opacity: 1;
 }
 
 .player-icon:active,
 .slider-icon:active,
-.change-quote:active {
+.change-quote:active,
+.change-settings:active {
   border: 0;
   outline: 0;  
   transform: scale(1.1);
@@ -262,6 +265,31 @@ body {
 
 .author {
   min-height: 20px;
+}
+
+.change-settings {
+  align-self: flex-start;
+  background-image: url("../assets/svg/settings.svg");
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.modal-window {
+  display: flex;
+  position: fixed;
+  bottom: 70px;
+  left: 20px;
+  width: 600px;
+  height: 300px;
+  border-radius: 15px;
+  background: #444444;
+}
+
+.language {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 768px) {
