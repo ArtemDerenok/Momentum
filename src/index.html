@@ -46,7 +46,10 @@
       <div class="quote"></div>
       <div class="author"></div>
     </div>
-    <button class="change-settings" id="settings"></button>
+    <div class="footer-btn-container">
+      <button class="change-settings" id="settings"></button>
+      <button class="change-todo" id="todo-btn"></button>
+    </div>
   </footer>
   <div class="modal hidden" id="settings-modal-container">
     <div class="modal-window">
@@ -70,6 +73,23 @@
           </div>
         </div>
         <input type="text" class="search-input hidden" name="search" value="" placeholder="Tag for search">
+      </div>
+    </div>
+  </div>
+  <div class="todo-modal hidden" id="todo-modal-container">
+    <div class="todo-window">
+      <div class="todo-window-main">
+        <div class="todo">
+          <p>My tasks:</p>
+          <ul class="todo-list">
+            
+          </ul>
+        </div>
+        <input type="text" id="input-task" class="hidden">
+        <div class="todo-btn">
+          <button class="add-task"></button>
+          <button class="deleteAll-tasks"></button>
+        </div>
       </div>
     </div>
   </div>

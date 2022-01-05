@@ -72,7 +72,8 @@ body {
 .player-icon,
 .slider-icon,
 .change-quote,
-.change-settings {
+.change-settings,
+.change-todo {
   width: 32px;
   height: 32px;
   background-size: 32px 32px;
@@ -89,14 +90,16 @@ body {
 .player-icon:hover,
 .slider-icon:hover,
 .change-quote:hover,
-.change-settings:hover {
+.change-settings:hover,
+.change-todo:hover {
   opacity: 1;
 }
 
 .player-icon:active,
 .slider-icon:active,
 .change-quote:active,
-.change-settings:active {
+.change-settings:active,
+.change-todo:active {
   border: 0;
   outline: 0;  
   transform: scale(1.1);
@@ -267,9 +270,18 @@ body {
   min-height: 20px;
 }
 
+.footer-btn-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .change-settings {
-  align-self: flex-start;
   background-image: url("../assets/svg/settings.svg");
+}
+
+.change-todo {
+  background-image: url("../assets/svg/todo.svg");
 }
 
 .hidden {
@@ -281,10 +293,56 @@ body {
   position: fixed;
   bottom: 70px;
   left: 20px;
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  background: #444444;
+}
+
+.todo-window {
+  display: flex;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
   width: 600px;
   height: 300px;
   border-radius: 15px;
   background: #444444;
+}
+
+.add-task {
+  background-image: url("../assets/svg/plus.svg");
+}
+
+.delete-task {
+  background-image: url("../assets/svg/delete.svg");
+}
+
+.deleteAll-tasks {
+  background-image: url("../assets/svg/deleteAll.svg");
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  align-items: flex-start;
+  list-style-type:none;
+}
+
+.add-task,
+.delete-task,
+.deleteAll-tasks {
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  opacity: .8;
+  cursor: pointer;
 }
 
 .language {
