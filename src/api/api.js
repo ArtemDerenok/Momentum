@@ -33,13 +33,12 @@ export const getQuote = async () => {
   return result[randomNum];
 };
 
-export const getImagesByFlicker = async () => {
+export const getImagesByFlickr = async () => {
+  const settings = getJsonSettings();
   const data = await fetch(
-    'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=80b63f5d15e27bccde1dac2016d5f35f&tags=nature&extras=url_l&format=json&nojsoncallback=1'
+    `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=80b63f5d15e27bccde1dac2016d5f35f&tags=${settings.searchTag}&extras=url_l&format=json&nojsoncallback=1`
   );
   const result = await data.json();
-
-  console.log(result.photos.photo);
 
   return result.photos.photo;
 };
