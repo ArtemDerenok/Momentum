@@ -39,7 +39,7 @@ export const setBgByApi = async () => {
   };
 };
 
-const getImages = async () => {
+export const getImages = async () => {
   apiImages = await getImagesByFlickr();
   const setting = getJsonSettings();
   if (setting.sourceImage === 'flickr') {

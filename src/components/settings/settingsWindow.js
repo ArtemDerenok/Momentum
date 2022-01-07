@@ -1,5 +1,5 @@
 import { getJsonSettings, setLanguage, setSourceImages, setTag } from './settings';
-import { setBgByApi, setBgByGitHub } from '../backgroundSlider/backgroundSlider';
+import { getImages, setBgByApi, setBgByGitHub } from '../backgroundSlider/backgroundSlider';
 import getRandomNum from '../../utils/getRandomNum';
 import showGreeting from '../greeting/greeting';
 import handleWeather from '../weatherWidget/weatherWidget';
@@ -61,4 +61,5 @@ settingsInputsImage.forEach((elem) => {
 
 tagInput.addEventListener('blur', (event) => {
   setTag(event.target.value);
+  getImages();
 });
