@@ -1,10 +1,10 @@
 import './css/owfont-regular.css';
 import './css/style.css';
-import './components/settings/settings';
 import './components/settings/settingsWindow';
 import './components/toDo/toDo';
 import './components/toDo/toDoWindow';
 import showTime from './components/watch/watch';
+import { translateSettings } from './components/settings/settings';
 import showGreeting from './components/greeting/greeting';
 import './components/backgroundSlider/backgroundSlider';
 import handleWeather from './components/weatherWidget/weatherWidget';
@@ -15,3 +15,4 @@ showTime();
 showGreeting();
 handleWeather();
 showQuote();
+translateSettings();

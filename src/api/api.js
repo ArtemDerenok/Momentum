@@ -31,6 +31,9 @@ export const getQuote = async () => {
 
 export const getImagesByFlickr = async () => {
   const settings = getJsonSettings();
+  if (!settings.searchTag) {
+    settings.searchTag = 'nature';
+  }
   const data = await fetch(
     `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=80b63f5d15e27bccde1dac2016d5f35f&tags=${settings.searchTag}&extras=url_l&format=json&nojsoncallback=1`
   );

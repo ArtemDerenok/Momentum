@@ -456,6 +456,10 @@ body {
   align-self: center;
 }
 
+.search-input::placeholder {
+  color: #C5B358;
+}
+
 @media (max-width: 768px) {
   .time {
     min-height: 80px;

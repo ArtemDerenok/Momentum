@@ -1,4 +1,10 @@
-import { getJsonSettings, setLanguage, setSourceImages, setTag } from './settings';
+import {
+  getJsonSettings,
+  setLanguage,
+  setSourceImages,
+  setTag,
+  translateSettings,
+} from './settings';
 import { getImages, setBgByApi, setBgByGitHub } from '../backgroundSlider/backgroundSlider';
 import getRandomNum from '../../utils/getRandomNum';
 import showGreeting from '../greeting/greeting';
@@ -55,6 +61,7 @@ settingsInputsLang.forEach((elem) => {
     showGreeting();
     handleWeather();
     showQuote();
+    translateSettings();
   });
 });
 
