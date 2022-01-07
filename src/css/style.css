@@ -286,6 +286,12 @@ body {
 
 .hidden {
   visibility: hidden;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.modal {
+  transition: 0.5s;
 }
 
 .modal-window {
@@ -293,21 +299,59 @@ body {
   position: fixed;
   bottom: 70px;
   left: 20px;
-  width: 300px;
-  height: 300px;
+  max-width: 200px;
   border-radius: 15px;
   background: #444444;
+  padding-top: 5px;
+}
+
+.modal-window-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.source-image {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 95%;
+}
+
+.source-image p {
+  margin-bottom: 5px;
+}
+
+.todo-modal {
+  transition: 0.5s;
 }
 
 .todo-window {
   display: flex;
+  justify-content: center;
   position: fixed;
   bottom: 70px;
   right: 20px;
-  width: 600px;
-  height: 300px;
+  min-width: 300px;
+  max-width: 300px;
   border-radius: 15px;
   background: #444444;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.input-add-task {
+  border: none;
+  outline: none;
+  background-color: #6E6C6C;
+}
+
+.todo-window-main {
+  width: 100%;
+}
+
+.todo p {
+  margin-bottom: 5px;
 }
 
 .add-task {
@@ -325,9 +369,23 @@ body {
 .todo-list {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
   align-items: flex-start;
   list-style-type:none;
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+}
+
+.todo-list li span {
+  width: 70%;
+  overflow: hidden;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
 }
 
 .add-task,
@@ -345,9 +403,30 @@ body {
   cursor: pointer;
 }
 
+.add-task:hover,
+.delete-task:hover,
+.deleteAll-tasks:hover {
+  opacity: 1;
+}
+
+.add-task:active,
+.delete-task:active,
+.deleteAll-tasks:active {
+  border: 0;
+  outline: 0;  
+  transform: scale(1.1);
+}
+
 .language {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  width: 95%;
+  margin-bottom: 10px;
+}
+
+.language p {
+  margin-bottom: 5px;
 }
 
 @media (max-width: 768px) {

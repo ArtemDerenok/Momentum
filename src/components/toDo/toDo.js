@@ -29,13 +29,15 @@ const deleteTask = (element) => {
 
 const setTaskToList = (value) => {
   const task = document.createElement('li');
+  const span = document.createElement('span');
   const deleteBtn = document.createElement('button');
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
   deleteBtn.classList.add('delete-task');
-  task.innerText = value;
+  span.innerText = value;
+  task.append(checkbox);
+  task.append(span);
   task.append(deleteBtn);
-  task.prepend(checkbox);
   tasksList.append(task);
   deleteTask(deleteBtn);
 };
