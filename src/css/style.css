@@ -21,6 +21,18 @@ body {
   transition: background-image 1s ease-in-out;
 }
 
+.modal-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.overlay-hidden {
+  display: none;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -278,10 +290,12 @@ body {
 
 .change-settings {
   background-image: url("../assets/svg/settings.svg");
+  z-index: 1;
 }
 
 .change-todo {
   background-image: url("../assets/svg/todo.svg");
+  z-index: 1;
 }
 
 .hidden {
@@ -303,6 +317,7 @@ body {
   border-radius: 15px;
   background: #444444;
   padding-top: 5px;
+  z-index: 1;
 }
 
 .modal-window-main {
@@ -338,6 +353,7 @@ body {
   background: #444444;
   text-align: center;
   padding-top: 5px;
+  z-index: 1;
 }
 
 .input-add-task {

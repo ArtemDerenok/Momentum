@@ -9,12 +9,29 @@ const settingsButton = document.getElementById('settings');
 const settingsModalWindow = document.getElementById('settings-modal-container');
 const settingsInputsLang = document.querySelectorAll('.language input');
 const settingsInputsImage = document.querySelectorAll('.source-images input');
+const toDoModalWindow = document.getElementById('todo-modal-container');
+const overlay = document.querySelector('.modal-overlay');
 const tagInput = document.querySelector('.search-input');
 
 const randomNum = getRandomNum(1, 20);
 
 settingsButton.addEventListener('click', () => {
   settingsModalWindow.classList.toggle('hidden');
+
+  if (!toDoModalWindow.classList.contains('hidden')) {
+    toDoModalWindow.classList.add('hidden');
+  }
+
+  if (settingsModalWindow.classList.contains('hidden')) {
+    overlay.classList.add('overlay-hidden');
+  } else {
+    overlay.classList.remove('overlay-hidden');
+  }
+});
+
+overlay.addEventListener('click', () => {
+  settingsModalWindow.classList.add('hidden');
+  overlay.classList.add('overlay-hidden');
 });
 
 const settings = getJsonSettings();
