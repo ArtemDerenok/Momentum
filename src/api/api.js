@@ -6,11 +6,7 @@ export const getWeather = async () => {
   const settings = getJsonSettings();
 
   if (!localStorage.getItem('city')) {
-    if (settings.lang === 'en') {
-      city = 'Minsk';
-    } else {
-      city = 'Минск';
-    }
+    city = 'Minsk';
     localStorage.setItem('city', city);
   } else {
     city = localStorage.getItem('city');

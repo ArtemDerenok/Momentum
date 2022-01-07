@@ -35,8 +35,6 @@ const showWeather = (data) => {
 const handleWeather = async () => {
   if (isInputValue()) {
     localStorage.setItem('city', inputCity.value);
-  } else {
-    localStorage.setItem('city', '');
   }
   const weatherData = await getWeather();
   showWeather(weatherData);
