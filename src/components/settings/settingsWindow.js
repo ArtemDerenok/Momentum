@@ -10,6 +10,7 @@ import getRandomNum from '../../utils/getRandomNum';
 import showGreeting from '../greeting/greeting';
 import handleWeather from '../weatherWidget/weatherWidget';
 import showQuote from '../quoteWidget/quoteWidget';
+import { showCurrentDay } from '../watch/watch';
 
 const settingsButton = document.getElementById('settings');
 const settingsModalWindow = document.getElementById('settings-modal-container');
@@ -62,6 +63,7 @@ settingsInputsLang.forEach((elem) => {
     handleWeather();
     showQuote();
     translateSettings();
+    showCurrentDay();
   });
 });
 

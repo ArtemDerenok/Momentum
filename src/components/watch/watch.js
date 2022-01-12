@@ -1,9 +1,16 @@
-const showCurrentDay = () => {
+import { getJsonSettings } from '../settings/settings';
+
+export const showCurrentDay = () => {
+  const settings = getJsonSettings();
   const dateContainer = document.querySelector('.date');
   const date = new Date();
   const optionsDate = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
-  if (dateContainer.innerText !== date.toLocaleDateString('en-US', optionsDate)) {
-    dateContainer.innerText = date.toLocaleDateString('en-US', optionsDate);
+  const formatter = new Intl.DateTimeFormat(
+    `${settings.lang === 'ru' ? 'ru' : 'en-US'}`,
+    optionsDate
+  );
+  if (dateContainer.innerText !== formatter.format(date)) {
+    dateContainer.innerText = formatter.format(date);
   }
 };
 
@@ -17,7 +24,7 @@ const chechCurrentHour = (num, elem) => {
   }
 };
 
-const showTime = () => {
+export const showTime = () => {
   const time = document.querySelector('.time');
   const date = new Date();
 
@@ -29,5 +36,3 @@ const showTime = () => {
     showTime();
   }, 1000);
 };
-
-export default showTime;
